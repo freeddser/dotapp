@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dotapp-service
+  labels:
+    app: dotapp-service
+spec:
+  selector:
+    app: dotapp-service
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    type: ClusterIP
