@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dotapp-service
-  namespace: test
 spec:
   selector:
     matchLabels:
