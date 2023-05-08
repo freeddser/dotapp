@@ -1,25 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gavinapi-service
+  name: dotapp-service
   namespace: test
 spec:
   selector:
     matchLabels:
-      app: gavinapi-service
+      app: dotapp-service
   replicas: 1
   template:
     metadata:
       labels:
-        app: gavinapi-service
+        app: dotapp-service
     spec:
       restartPolicy: Always
       containers:
-        - name: gavinapi-service
-          image: acrgavin.azurecr.io/todoapi:55
+        - name: dotapp-service
+          image: acrgavin.azurecr.io/dotapp
           imagePullPolicy: Always
 
           ports:
             - containerPort: 80
-      imagePullSecrets:
-        - name: gavin-acr-user          
